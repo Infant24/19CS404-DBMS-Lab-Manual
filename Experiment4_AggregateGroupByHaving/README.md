@@ -37,124 +37,162 @@ HAVING condition;
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+<img width="1237" height="511" alt="image" src="https://github.com/user-attachments/assets/e22f5051-8eb6-4f57-9ac3-a05f6340d61d" />
 
-```sql
--- Paste your SQL code below for Question 1
+```
+SELECT strftime('%Y-%m', Date) AS Month, COUNT(*) AS TotalRecords
+FROM MedicalRecords
+GROUP BY strftime('%Y-%m', Date)
+ORDER BY Month;
 ```
 
 **Output:**
+<img width="1236" height="502" alt="image" src="https://github.com/user-attachments/assets/4501e0e9-b127-4057-a2e1-d62d16709ca2" />
 
-![Output1](output.png)
 
 **Question 2**
----
--- Paste Question 2 here
+<img width="1235" height="635" alt="image" src="https://github.com/user-attachments/assets/caa741ac-b6a3-4089-822b-f97b0ce8097a" />
 
-```sql
--- Paste your SQL code below for Question 2
+
+```
+SELECT InsuranceCompany, COUNT(DISTINCT PatientID) AS TotalPatients
+FROM Insurance
+GROUP BY InsuranceCompany
+ORDER BY InsuranceCompany;
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1222" height="733" alt="image" src="https://github.com/user-attachments/assets/00cc3cb2-3e90-44c4-9d80-4562b653acaa" />
+
 
 **Question 3**
----
--- Paste Question 3 here
+<img width="1231" height="598" alt="image" src="https://github.com/user-attachments/assets/b292a911-adf4-4042-ac74-053e41568fd1" />
 
-```sql
--- Paste your SQL code below for Question 3
+
+```
+SELECT Specialty, COUNT(DoctorID) AS TotalDoctors
+FROM Doctors 
+GROUP BY Specialty;
 ```
 
 **Output:**
+<img width="1240" height="726" alt="image" src="https://github.com/user-attachments/assets/8c942df5-f43d-4ce8-b1b3-20ff386270d8" />
 
-![Output3](output.png)
+
+
 
 **Question 4**
----
--- Paste Question 4 here
+<img width="1253" height="527" alt="image" src="https://github.com/user-attachments/assets/b1867323-3c38-4f7c-bde5-9fb5f46ff0f7" />
 
-```sql
--- Paste your SQL code below for Question 4
+
+```
+SELECT name AS Employee_Name, Age AS Age
+FROM employee
+ORDER BY Age ASC
+LIMIT 1;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1233" height="368" alt="image" src="https://github.com/user-attachments/assets/dd78bdee-c868-45ee-b59f-fec89c8d655f" />
+
 
 **Question 5**
----
--- Paste Question 5 here
+<img width="1233" height="516" alt="image" src="https://github.com/user-attachments/assets/5afdcaea-9248-4d8a-a6ce-e5c194ffc4f8" />
 
-```sql
--- Paste your SQL code below for Question 5
+```
+SELECT COUNT()
+FROM (SELECT DISTINCT age FROM employee) AS UniqueAges;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1252" height="447" alt="image" src="https://github.com/user-attachments/assets/594e0510-46a6-435a-a619-17d481b5e0c7" />
+
 
 **Question 6**
----
--- Paste Question 6 here
+<img width="1241" height="499" alt="image" src="https://github.com/user-attachments/assets/286f3bfe-be45-4de5-8a61-20afda72d032" />
 
-```sql
--- Paste your SQL code below for Question 6
+
+```
+SELECT name, email,LENGTH(email) AS min_email_length
+FROM customer
+ORDER BY LENGTH(email) ASC
+LIMIT 1;
 ```
 
 **Output:**
 
-![Output6](output.png)
+
+<img width="1241" height="340" alt="image" src="https://github.com/user-attachments/assets/c6409471-5910-4e28-a39c-383c62d3fa4f" />
+
 
 **Question 7**
----
--- Paste Question 7 here
 
-```sql
--- Paste your SQL code below for Question 7
+<img width="1231" height="543" alt="image" src="https://github.com/user-attachments/assets/ad1a265f-5a71-405a-bbfe-0f57e07cb890" />
+
+```
+SELECT MAX(price) - MIN(price) AS price_diff
+FROM fruits;
 ```
 
 **Output:**
 
-![Output7](output.png)
+
+<img width="1231" height="414" alt="image" src="https://github.com/user-attachments/assets/323af9c3-bf87-49d6-8572-03ee783f9760" />
 
 **Question 8**
----
--- Paste Question 8 here
 
-```sql
--- Paste your SQL code below for Question 8
+<img width="1232" height="497" alt="image" src="https://github.com/user-attachments/assets/09d9dd81-616a-45a6-86e5-6d3ff0881e23" />
+
+```
+SELECT category_id, AVG(Price) 
+FROM products
+GROUP BY category_id
+HAVING AVG(Price) BETWEEN 10 AND 15;
 ```
 
 **Output:**
 
-![Output8](output.png)
+
+<img width="1291" height="459" alt="image" src="https://github.com/user-attachments/assets/3c5178f8-412e-4974-ac23-045fbdb3a977" />
+
 
 **Question 9**
----
--- Paste Question 9 here
 
-```sql
--- Paste your SQL code below for Question 9
+<img width="1250" height="534" alt="image" src="https://github.com/user-attachments/assets/3eecc425-ce12-4deb-99d9-975b3dc16754" />
+
+
+```
+SELECT age, MIN(income) 
+FROM employee
+GROUP BY age
+HAVING MIN(income) < 400000;
 ```
 
 **Output:**
 
-![Output9](output.png)
+
+<img width="1230" height="452" alt="image" src="https://github.com/user-attachments/assets/27f10f2f-87a0-4786-9434-d58f2410d17e" />
+
 
 **Question 10**
----
--- Paste Question 10 here
 
-```sql
--- Paste your SQL code below for Question 10
+<img width="1222" height="487" alt="image" src="https://github.com/user-attachments/assets/bbd29eac-953a-445e-b646-72d71f66a737" />
+
+
+```
+SELECT category_id, Min(price) as Price
+FROM products
+GROUP BY category_id
+HAVING MIN(price) < 10;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1229" height="411" alt="image" src="https://github.com/user-attachments/assets/3efa9b95-8d82-4173-bae5-fcb330c1197d" />
+
 
 
 ## RESULT
